@@ -43,33 +43,39 @@ const Review = () => {
   const [index, setIndex] = useState(0);
   const { id, name, job, image, text } = reviews[index];
 
-  const checkIndex = (num) => {
-    if (num > reviews.length - 1) return 0;
-    if (num < 0) return reviews.length - 1;
-    return num;
+  // Handle wrap-around for index navigation
+  const checkIndex = (number) => {
+    if (number > reviews.length - 1) return 0;
+    if (number < 0) return reviews.length - 1;
+    return number;
   };
 
   const nextReview = () => {
-    setIndex((i) => checkIndex(i + 1));
+    setIndex((prev) => checkIndex(prev + 1));
   };
 
   const prevReview = () => {
-    setIndex((i) => checkIndex(i - 1));
+    setIndex((prev) => checkIndex(prev - 1));
   };
 
   const randomReview = () => {
-    let randomIndex = Math.floor(Math.random() * reviews.length);
-    if (randomIndex === index) randomIndex = index === reviews.length - 1 ? 0 : index + 1;
-    setIndex(randomIndex);
+    let randomNumber = Math.floor(Math.random() * reviews.length);
+    if (randomNumber === index) {
+      randomNumber = (index + 1) % reviews.length;
+    }
+    setIndex(randomNumber);
   };
 
   return (
     <article className="review">
       <img src={image} alt={name} className="person-img" />
-      <h4 className="author" id={`author-${id}`}>{name}</h4>
+      <h4 className="author" id={`author-${id}`}>
+        {name}
+      </h4>
       <p className="job">{job}</p>
       <p className="info">{text}</p>
-      <div>
+
+      <div className="button-container">
         <button className="prev-btn" onClick={prevReview}>
           Prev
         </button>
@@ -77,6 +83,7 @@ const Review = () => {
           Next
         </button>
       </div>
+
       <button className="random-btn" onClick={randomReview}>
         surprise me
       </button>
@@ -85,4 +92,3 @@ const Review = () => {
 };
 
 export default Review;
-
