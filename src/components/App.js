@@ -1,17 +1,17 @@
-
 import React from "react";
-import "./styles.css";
 import Review from "./Review";
+import "../styles/App.css";
 
-function App() {
+const App = () => {
   return (
     <main>
       <section className="container">
-        <h2 id="review-heading">Our Reviews</h2>
+        <h1 id="review-heading">Our Reviews</h1>
         <Review />
       </section>
     </main>
   );
-}
+};
 
 export default App;
+
