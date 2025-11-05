@@ -1,6 +1,6 @@
 import React from "react";
-import "./../styles/App.css";
 import Review from "./Review";
+import "./styles.css";
 
 export default function App() {
   return (
@@ -12,5 +12,4 @@ export default function App() {
     </main>
   );
 }
-
 
