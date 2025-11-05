@@ -1,12 +1,47 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
+.container {
+  text-align: center;
+  margin-top: 40px;
+}
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.review {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+  margin: 20px auto;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.person-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.author {
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.job {
+  color: #555;
+  font-style: italic;
+}
+
+.info {
+  margin-top: 10px;
+  color: #333;
+}
+
+.prev-btn,
+.next-btn,
+.random-btn {
+  margin: 8px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #0078d4;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
